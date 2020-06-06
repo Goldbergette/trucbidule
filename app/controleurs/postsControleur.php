@@ -7,6 +7,7 @@
     */
       namespace App\Controleurs\Posts;
       use \App\Modeles\Posts;
+      use \App\Modeles\Tags;
 
       function indexAction(\PDO $connexion) {
         // 1. On demande les posts au modèle que l'on met dans $posts
@@ -24,6 +25,9 @@
       function showAction(\PDO $connexion, int $id){
         include_once '../app/modeles/postsModele.php';
         $post = Posts\findOneById($connexion, $id);
+
+        include_once '../app/modeles/tagsModele.php';
+        $tags = Tags\indexByPostId($connexion, $id);
 
         GLOBAL $content;
 
