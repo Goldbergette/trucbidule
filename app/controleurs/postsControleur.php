@@ -20,3 +20,14 @@
             include '../app/vues/posts/index.php';
           $content = ob_get_clean();
       }
+
+      function showAction(\PDO $connexion, int $id){
+        include_once '../app/modeles/postsModele.php';
+        $post = Posts\findOneById($connexion, $id);
+
+        GLOBAL $content;
+
+        ob_start();
+          include '../app/vues/posts/show.php';
+        $content = ob_get_clean();
+      }

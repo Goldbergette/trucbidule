@@ -11,6 +11,11 @@ ROUTE PAR DEFAUT: liste des posts (les 10 derniers)
         Title + resume + date (jour, mois, année séparément)
       > Le lien READ MORE vers le détails du post
 */
+if (isset($_GET['postID'])):
+  include_once '../app/controleurs/postsControleur.php';
+  \App\Controleurs\Posts\showAction($connexion, $_GET['postID']);
 
+else:
 include_once '../app/controleurs/postsControleur.php';
   \App\Controleurs\Posts\indexAction($connexion);
+endif;
