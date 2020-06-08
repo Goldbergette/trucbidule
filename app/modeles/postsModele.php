@@ -23,3 +23,12 @@ function findOneById(\PDO $connexion, int $id){
   $rs->execute();
   return $rs->fetch(\PDO::FETCH_ASSOC);
 }
+
+function findLastest(\PDO $connexion){
+  $sql="SELECT title, image, created_at, id
+        FROM posts
+        ORDER BY created_at DESC
+        LIMIT 3;";
+  $rs = $connexion->query($sql);
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}

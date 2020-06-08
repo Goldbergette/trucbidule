@@ -10,7 +10,7 @@
       use \App\Modeles\Tags;
       use \App\Modeles\Authors;
       use \App\Modeles\Comments;
-      
+
 
       function indexAction(\PDO $connexion) {
         // 1. On demande les posts au modèle que l'on met dans $posts
@@ -43,4 +43,11 @@
         ob_start();
           include '../app/vues/posts/show.php';
         $content = ob_get_clean();
+      }
+
+      function lastestIndex(\PDO $connexion){
+        include_once '../app/modeles/postsModele.php';
+        $posts = Posts\findLastest($connexion);
+
+        include '../app/vues/posts/lastest.php';
       }
