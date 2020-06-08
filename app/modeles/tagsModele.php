@@ -17,3 +17,11 @@ $rs->bindValue (':id', $id, \PDO::PARAM_INT);
 $rs->execute();
 return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+
+function findAll(\PDO $connexion) {
+  $sql = "SELECT name
+          FROM tags;";
+  $rs = $connexion->query($sql);
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
