@@ -12,12 +12,10 @@
 </div>
 <div class="sidebar-box ftco-animate">
   <div class="categories">
-    <h3>Categories</h3>
-    <li><a href="#">Illustration <span class="ion-ios-arrow-forward"></span></a></li>
-    <li><a href="#">Branding <span class="ion-ios-arrow-forward"></span></a></li>
-    <li><a href="#">Application <span class="ion-ios-arrow-forward"></span></a></li>
-    <li><a href="#">Design <span class="ion-ios-arrow-forward"></span></a></li>
-    <li><a href="#">Marketing <span class="ion-ios-arrow-forward"></span></a></li>
+    <?php
+     include_once '../app/controleurs/categoriesControleur.php';
+     \App\Controleurs\Categories\indexAction($connexion);
+          ?>
   </div>
 </div>
 
