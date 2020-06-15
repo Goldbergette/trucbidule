@@ -43,14 +43,14 @@
               <!-- END comment-list -->
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
-                <form action="?comments=add" class="p-5 bg-light" method="post">
+                <form action="?comments=add" class="p-5 bg-light" method="post" id="<?php $comment['post_id']; ?>">
                   <div class="form-group">
                     <label for="name">Name *</label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" id="name" name="pseudo">
                   </div>
                   <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="content" id="message" cols="30" rows="10" class="form-control"></textarea>
                   </div>
                   <div class="form-group">
                     <input type="hidden" name="postId" value="4" />
